@@ -1,0 +1,14 @@
+class post(View):
+    def get(self, request, slug):
+        post = Post.objects.get(slug=slug)
+        comment = NewComment()
+        return render(request, "blogs/post-detail.html", {"post": post, "form": comment, "comments": post.comments.all()})
+    def post(self, request, slug):
+        post = Post.objects.get(slug=slug)
+        new_comment = NewComment(request.POST)
+        if new_comment.is_valid():
+            print("ok")
+            new_comment.save()
+            return render(request, "blogs/post-detail.html", {"post": post, "comments": post.comments.all()})
+   
+        return render(request, "blogs/post-detail.html", {"post": post, "form": new_comment, "comments": post.comments.all()})
