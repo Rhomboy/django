@@ -1,1 +1,1 @@
-web: gunicorn 'sweet-recreation.wsgi'
+web: gunicorn 'mysite.wsgi'
