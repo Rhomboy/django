@@ -1,9 +1,8 @@
-{
-    "scripts": {
-      "railway:start:backend": "directus bootstrap --skipAdminInit; pnpm directus:schema:apply --yes; directus start"
-    },
-    "dependencies": {
-      "@directus/api": "^11.1.0",
-      "directus": "^10.6.1"
-    }
-  }
+  "scripts": {
+    "develop": "concurrently \"react-scripts start\" \" nodemon ./src/services/server.js\"",
+    "start": "concurrently \"react-scripts start\" \" node ./src/services/server.js\"",
+    "build": "CI=false react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "seeds": "node ./src/services/seeds/index.js"
+  },
