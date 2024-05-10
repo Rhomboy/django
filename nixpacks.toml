@@ -1,7 +1,0 @@
-providers = ['...', 'python']
-
-[phases.install]
-cmds = ['pnpm i --frozen-lockfile']
-
-[start]
-cmd = 'pnpm railway:start:backend'
