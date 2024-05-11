@@ -86,6 +86,8 @@ DATABASES = {
     }
 }
 DATABASES['default'] = dj_database_url.parse(getenv('DATABASE_URL'))
+INTERNAL_IPS = ('127.0.0.1',
+                'localhost:8000')
 
 
 # Password validation
