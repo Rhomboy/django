@@ -72,3 +72,4 @@ nest-asyncio==1.6.0
 networkx==3.2.1
 notebook_shim==0.2.4
 numpy==1.26.4
+dj_database_url==2.1.0
