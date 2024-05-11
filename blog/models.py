@@ -2,7 +2,10 @@ from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator, MinLengthValidator
 from django.urls import reverse
 from django.utils.text import slugify
-
+class Tag(models.Model):
+    caption = models.CharField(max_length=20)
+    def __str__(self):
+      return self.caption
   #  featured_posts = models.
 class Author(models.Model):
  first_name = models.CharField(max_length=100)
