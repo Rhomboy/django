@@ -81,12 +81,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 POSTGRES_LOCALLY = True
     
-DATABASES = {
-    'default': {
-        'ENGINE': 'mysqlclient',
-        'NAME': BASE_DIR / dj_database_url.parse(getenv('DATABASE_URL')),
-    }
-}
+
 DATABASES['default'] = dj_database_url.parse(getenv('DATABASE_URL'))
 INTERNAL_IPS = ('127.0.0.1',
                 'localhost:8000')
