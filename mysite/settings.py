@@ -83,8 +83,8 @@ POSTGRES_LOCALLY = True
     
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'mysqlclient',
+        'NAME': BASE_DIR / dj_database_url.parse(getenv('DATABASE_URL')),
     }
 }
 DATABASES['default'] = dj_database_url.parse(getenv('DATABASE_URL'))
