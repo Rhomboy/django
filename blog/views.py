@@ -51,7 +51,7 @@ class PostView(View):
                 comment = new_comment.save(commit=False)
                 comment.post = post
                 comment.save()
-                return HttpResponseRedirect(reverse("post-detail-page", args=[slug]))
+                return HttpResponseRedirect(reverse("post-detail", args=[slug]))
            return render(request, "blogs/post-detail.html", {"comments": comments, "tags": tags, "post": post, "comment_form": new_comment})
 class ReadLater(View):
  def get(self, request):
