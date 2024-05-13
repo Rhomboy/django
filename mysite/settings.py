@@ -31,6 +31,7 @@ DEBUG = getenv("IS_PRODUCTION", True)
 
 ALLOWED_HOSTS = ['127.0.0.1', 'django-server-production-e5a8.up.railway.app']
 CSRF_TRUSTED_ORIGINS = ['https://django-server-production-e5a8.up.railway.app']
+CORS_ALLOWED_ORIGINS = [''https://django-server-production-e5a8.up.railway.app']
 
 
 # Application definition
