@@ -82,7 +82,13 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 POSTGRES_LOCALLY = True
 DATABASES = {}
 
-DATABASES['default'] = dj_database_url.parse(getenv('DATABASE_URL'))
+DATABASES = {'default': {
+ 'ENGINE': 'django.db.backends.postgresql',
+ 'NAME': 'railway',
+ 'USER': 'postgres',
+ 'PASSWORD': 'iHxKrbykVCCQXjUBgiSLWiUzXXCWUcvT',
+ 'HOST': 'monorail.proxy.rlwy.net',
+ 'PORT': '23800'}}
 INTERNAL_IPS = ('127.0.0.1',
                 'localhost:8000')
 
